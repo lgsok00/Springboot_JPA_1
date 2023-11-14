@@ -27,6 +27,9 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.boot:spring-boot-devtools'
 
+	// p6spy 추가
+	implementation 'com.github.gavlyukovskiy:p6spy-spring-boot-starter:1.5.6'
+
 	// Validation 추가
 	implementation 'org.springframework.boot:spring-boot-starter-validation'
 
@@ -37,11 +40,12 @@ dependencies {
 
 	//JUnit4 추가
 	testImplementation("org.junit.vintage:junit-vintage-engine") {
-	exclude group: "org.hamcrest", module: "hamcrest-core"
-}
+		exclude group: "org.hamcrest", module: "hamcrest-core"
+	}
 
 }
 
-tasks.named('test') {
+test {
 	useJUnitPlatform()
 }
+
