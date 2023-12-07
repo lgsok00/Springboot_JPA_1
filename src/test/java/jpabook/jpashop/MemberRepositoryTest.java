@@ -32,8 +32,8 @@ public class MemberRepositoryTest {
     // then
     Assertions.assertThat(findMember.getId()).isEqualTo(member.getId());
     Assertions.assertThat(findMember.getUsername()).isEqualTo(member.getUsername());
-    Assertions.assertThat(findMember).isEqualTo(member);
-    System.out.println("findMember == member : " + (findMember == member));
 
+    Assertions.assertThat(findMember).isEqualTo(member);  // JPA 엔티티 동일성 보장
+    System.out.println("findMember == member : " + (findMember == member));
   }
 }
